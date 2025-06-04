@@ -8,6 +8,7 @@ import { LoadingProvider } from "./context/LoadingProvider";
 const App = () => {
   return (
     <>
+    
       <LoadingProvider>
         <Suspense>
           <MainContainer>

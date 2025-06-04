@@ -43,7 +43,7 @@ const Navbar = () => {
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          Logo
+        <img src="/logo.svg" alt="logo" />
         </a>
         <a
           href="mailto:connect@bardia.software"
