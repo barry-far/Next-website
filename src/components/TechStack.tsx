@@ -15,12 +15,13 @@ const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
   "/images/react2.webp",
   "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
   "/images/mysql.webp",
   "/images/typescript.webp",
-  "/images/javascript.webp",
+  "/images/jira.webp",
+  "/images/confluence.webp",
+  "/images/clickup.webp",
+  "/images/msp.webp",
+  "/images/python.webp",
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
@@ -126,31 +127,27 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
 
 const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
+  const techStackRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
-      setIsActive(scrollY > threshold);
-    };
-    document.querySelectorAll(".header a").forEach((elem) => {
-      const element = elem as HTMLAnchorElement;
-      element.addEventListener("click", () => {
-        const interval = setInterval(() => {
-          handleScroll();
-        }, 10);
-        setTimeout(() => {
-          clearInterval(interval);
-        }, 1000);
-      });
-    });
-    window.addEventListener("scroll", handleScroll);
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setIsActive(entry.isIntersecting);
+      },
+      {
+        threshold: 0.1, // Adjust as needed
+      }
+    );
+    if (techStackRef.current) {
+      observer.observe(techStackRef.current);
+    }
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (techStackRef.current) {
+        observer.unobserve(techStackRef.current);
+      }
     };
   }, []);
+
   const materials = useMemo(() => {
     return textures.map(
       (texture) =>
@@ -167,7 +164,7 @@ const TechStack = () => {
   }, []);
 
   return (
-    <div className="techstack">
+    <div className="techstack" ref={techStackRef}>
       <h2> My Techstack</h2>
 
       <Canvas

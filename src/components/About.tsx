@@ -6,9 +6,8 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+        Dynamic CSM-certified Scrum Master with 5+ years of propelling Agile teams to exceed goals in SaaS, AI, and PWA initiatives. 
+        <br></br>Renowned for accelerating delivery cycles, elevating team performance, and forging strategic alignment between technical and business stakeholders.
         </p>
       </div>
     </div>

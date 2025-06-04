@@ -1,4 +1,4 @@
-# Moncy Yohannan Portfolio Website 🚀
+# Barry Fardar Portfolio Website 🚀
 
 This repository contains the open source version of my interactive portfolio website, built to showcase creative development and design skills using modern web technologies.
 
