@@ -115,6 +115,15 @@ body {
   left: 0;
   font-weight: 400;
   text-transform: uppercase;
+  z-index: 2;
+}
+
+.tech-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -125,5 +134,12 @@ body {
 @media screen and (max-width: 900px) {
   .techstack h2 {
     font-size: 40px;
+    top: 80px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .techstack h2 {
+    font-size: 32px;
+    top: 60px;
   }
 }

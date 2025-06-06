@@ -7,9 +7,56 @@
     <title>Barry Fardar - Creative Scrum Master | PM</title>
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#1d1d1d" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Barry Fardar - Creative Scrum Master | PM">
+    <meta name="description" content="Portfolio of Barry Fardar, a Creative Scrum Master and Project Manager specializing in agile methodologies and digital transformation.">
+    <meta name="keywords" content="Barry Fardar, Scrum Master, Project Manager, Agile, Portfolio, Software Development, Digital Transformation">
+    <meta name="author" content="Barry Fardar">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bardia.software/">
+    <meta property="og:title" content="Barry Fardar - Creative Scrum Master | PM">
+    <meta property="og:description" content="Portfolio of Barry Fardar, a Creative Scrum Master and Project Manager specializing in agile methodologies and digital transformation.">
+    <meta property="og:image" content="https://bardia.software/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bardia.software/">
+    <meta property="twitter:title" content="Barry Fardar - Creative Scrum Master | PM">
+    <meta property="twitter:description" content="Portfolio of Barry Fardar, a Creative Scrum Master and Project Manager specializing in agile methodologies and digital transformation.">
+    <meta property="twitter:image" content="https://bardia.software/og-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bardia.software/">
+    
+    <!-- Cross-browser compatibility -->
+    <script>
+      // Polyfill for older browsers
+      if (!('IntersectionObserver' in window)) {
+        document.write('<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"><\/script>');
+      }
+    </script>
+    <!-- Polyfill.io service to automatically include necessary polyfills -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.includes%2CPromise%2CObject.assign%2CElement.prototype.classList"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script nomodule src="https://unpkg.com/es-module-shims@1.5.18/dist/es-module-shims.js"></script>
+    <script nomodule>
+      // Fallback for browsers that don't support ES modules
+      document.write('<script src="/legacy-bundle.js"><\/script>');
+    </script>
+    <noscript>
+      <div style="padding: 20px; text-align: center; font-family: sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>This website requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+      </div>
+    </noscript>
   </body>
 </html>

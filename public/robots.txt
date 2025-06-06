@@ -1,0 +1,36 @@
+# Allow all web crawlers and AI bots to access all content
+User-agent: *
+Allow: /
+
+# Specific instructions for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Specific instructions for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Specific instructions for AI crawlers
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Claude-AI
+Allow: /
+
+User-agent: Bard-AI
+Allow: /
+
+User-agent: Perplexity-AI
+Allow: /
+
+# Sitemap location
+Sitemap: https://bardia.software/sitemap.xml 
