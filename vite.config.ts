@@ -30,6 +30,7 @@ export default defineConfig({
         ],
       },
       workbox: {
+        maximumFileSizeToCacheInBytes: 3 * 1024 * 1024, // Increase to 3MB
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/api\.example\.com\/.*/,
