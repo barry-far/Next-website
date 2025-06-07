@@ -43,12 +43,12 @@ const Contact = () => {
               Twitter <MdArrowOutward />
             </a>
             <a
-              href="https://www.instagram.com/brdi_fa"
+              href="https://t.me/brdi_fa"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
             >
-              Instagram <MdArrowOutward />
+              Telegram <MdArrowOutward />
             </a>
           </div>
           <div className="contact-box">
