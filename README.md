@@ -57,8 +57,7 @@ This project uses GSAP trial plugins for animation. **You cannot host the site w
 - `public/draco/` — Draco decoder files for 3D decompression
 - `public/images/` — Images and tech stack icons
 
-## Preview
-![Portfolio Preview](https://github.com/user-attachments/assets/3c4557e7-6392-4928-b8a9-7b2476ef4edd)
+
 
 ## License
 This project is open source and available under the [MIT License](LICENSE).
