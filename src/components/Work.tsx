@@ -3,37 +3,16 @@ import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { useEffect, useState } from "react";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Work = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 1024);
-    };
-    
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   useGSAP(() => {
-    // Clear any existing ScrollTriggers to prevent conflicts
-    ScrollTrigger.getById("work")?.kill();
-
-    if (isMobile) {
-      // Don't use horizontal scroll pinning on mobile
-      return;
-    }
-
     let translateX: number = 0;
+    const isMobile = window.innerWidth <= 1024;
 
     function setTranslateX() {
       const box = document.getElementsByClassName("work-box");
-      if (!box.length) return;
-      
       const rectLeft = document
         .querySelector(".work-container")!
         .getBoundingClientRect().left;
@@ -50,17 +29,30 @@ const Work = () => {
       scrollTrigger: {
         trigger: ".work-section",
         start: "top top",
-        end: `+=${translateX}`, // Use actual scroll width
-        scrub: 1, // Smoother scrubbing
+        end: `+=${translateX}`,
+        scrub: true,
         pin: true,
+        pinSpacing: true,
+        anticipatePin: 1,
         id: "work",
-        invalidateOnRefresh: true, // Recalculate on resize
+        onUpdate: (self) => {
+          if (isMobile) {
+            // Ensure smooth scrolling on mobile
+            gsap.set(".work-flex", {
+              x: -translateX * self.progress,
+              force3D: true,
+              willChange: "transform"
+            });
+          }
+        }
       },
     });
 
     timeline.to(".work-flex", {
       x: -translateX,
       ease: "none",
+      force3D: true,
+      willChange: "transform"
     });
 
     // Clean up
@@ -68,10 +60,10 @@ const Work = () => {
       timeline.kill();
       ScrollTrigger.getById("work")?.kill();
     };
-  }, [isMobile]);
+  }, []);
 
   return (
-    <div className={`work-section ${isMobile ? "mobile-work" : ""}`} id="work">
+    <div className="work-section" id="work">
       <div className="work-container section-container">
         <h2>
           My <span>Work</span>
