@@ -66,11 +66,26 @@ const Career = () => {
                 <h6>Etobicoke, ON, Canada</h6>
                 <h5>Vosyn AI</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>2025</h3>
             </div>
             <p>
             •	Facilitated sprint execution for 40+ developers on an AI-driven SaaS platform, driving a 35% productivity surge.<br></br>
 •	Guided retrospectives to implement continuous improvements, amplifying team performance.<br></br>
+
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+              <h4>IT Project Manager</h4>
+                <h6>North York, ON, Canada</h6>
+                <h5>Seneca Hackathon</h5>
+              </div>
+              <h3>NOW</h3>
+            </div>
+            <p>
+            •	Acted as the central point of coordination for a cross-functional team, ensuring all members stayed updated on goals, deliverables, and blockers.<br></br>
+•	Encouraged continuous improvement by fostering open communication, rapid iteration, and real-time feedback loops during the event.<br></br>
 
             </p>
           </div>
